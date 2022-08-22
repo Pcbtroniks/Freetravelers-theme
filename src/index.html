@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Travelers</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../dist/style.css">
+</head>
+<body>
+
+    <header class="relative">    
+
+        <!-- Hero Section -->
+        <section class="h-screen relative">
+            <div class="hero__video absolute top-0 left-0 -z-10 w-full h-full">
+                <video playsinline autoplay loop muted class="relative w-full h-full object-cover">
+                    <source src="./assets/vids/Travel720.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+        
+        <!-- Header -->
+        <section class="top-nav absolute top-0 w-full flex justify-between items-center px-2 my-2">
+
+            <!-- Icon -->
+            <div>
+                <img class="w-48" src="./assets/img/freetravelers-logo.jpg" alt="">
+            </div>
+
+            <!-- Hamburguer Menu Bars-->
+            <div class="burguer-menu relative z-50 top-0 right-0" onclick="animateMenu(this)">
+                <div class="bar1 w-10 h-1 my-2 bg-white duration-300"></div>
+                <div class="bar2 w-10 h-1 my-2 bg-white duration-300"></div>
+                <div class="bar3 w-10 h-1 my-2 bg-white duration-300"></div>
+            </div>
+
+        </section>
+
+    </header>
+
+    
+
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+    <span class="hidden burguer-menu-active"></span>
+    <script>
+        function animateMenu(element) {
+            element.classList.toggle('burguer-menu-active');
+        }
+    </script>
+    
+</body>
+</html>
