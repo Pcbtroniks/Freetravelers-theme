@@ -972,6 +972,12 @@ select {
   width: 33.333333%;
 }
 
+.min-w-fit {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
