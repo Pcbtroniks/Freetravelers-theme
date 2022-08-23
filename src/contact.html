@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Travelers</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../dist/style.css">
+</head>
+<body>
+
+    <!-- Header top -->
+
+    <header class="relative">    
+
+        
+        <!-- Header -->
+        <section class="top-nav top-0 w-full flex justify-between items-center px-8 my-4 mt-9">
+
+            <!-- Icon -->
+            <div>
+                <a href="/src/index.html">
+                    <img class="w-48" src="./assets/img/freetravelers-logo.jpg" alt="Logo Freetravelers">
+                </a>
+            </div>
+
+            <!-- Hamburguer Menu Bars-->
+            <div id="OpenBurguerMenu" class="burguer-menu z-50 top-0 right-0" onclick="handleLateralMenu(this)">
+                <div class="bar1 w-10 h-1 my-2 bg-black duration-300"></div>
+                <div class="bar2 w-10 h-1 my-2 bg-black duration-300"></div>
+                <div class="bar3 w-10 h-1 my-2 bg-black duration-300"></div>
+            </div>
+
+        </section>
+
+    </header>
+
+    <!-- Overlay Menu -->
+
+    <div id="OverlayMenu" class="overlay-menu  h-full w-0 fixed z-50 top-0 left-0 bg-black overflow-x-hidden duration-500">
+        
+        <img class="absolute top-9 left-8 w-48" src="./assets/img/freetravelers-logo.jpg" alt="Logo Freetravelers">
+
+        <a href="javascript:void(0)" onclick="CloseMenu()" class="absolute top-9 right-11 p-2 text-6xl text-[#818181] block duration-300 focus:text-[#f1f1f1] hover:text-[#f1f1f1]"> &times; </a>
+
+        <div class="overlay-menu-content relative top-1/4 md:h-1/6 w-full text-center mt-8 md:mt-0 flex flex-col">
+            <a href="/src/index.html" class="capitalize text-white text-4xl my-5 duration-300 focus:text-[#818181] hover:text-[#818181]">Inicio</a>
+            <a href="/src/calendar.html" class="capitalize text-white text-4xl my-5 duration-300 focus:text-[#818181] hover:text-[#818181]">Eventos</a>
+            <a href="#" class="capitalize text-white text-4xl my-5 duration-300 focus:text-[#818181] hover:text-[#818181]">Nosotros</a>
+            <a href="#" class="capitalize text-white text-4xl my-5 duration-300 focus:text-[#818181] hover:text-[#818181]">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Overlay Book Form -->
+
+    <div id="OverlayBookEvent" class="overlay-book-form  h-full w-0 fixed z-50 top-0 left-0 bg-[#e4e4e7] overflow-x-hidden duration-500">
+        
+
+        <a href="javascript:void(0)" onclick="CloseBookEvent()" class="absolute top-1 right-3 p-2 text-6xl text-[#818181] block duration-300 focus:text-[#f1f1f1] hover:text-[#f1f1f1]"> &times; </a>
+
+        <div class="overlay-menu-content relative top-20 md:h-1/6 w-full text-center mt-8 md:mt-0 flex flex-col">
+            
+            <div class="w-full px-4 text-center">
+
+                <form action="#" method="POST">
+                    <div class="max-w-4xl mx-auto">
+                        
+                        <div class="w-full">
+                            <select name="event" id="eventSelect" class="w-full rounded text-neutral-500">
+                                <option value="null" disabled selected>Select event...</option>
+                                <option value="buenos-aires">Buenos Aires</option>
+                                <option value="francia">Francia</option>
+                                <option value="Guadalajara">Guadalajara</option>
+                            </select>
+                        </div>
+                    
+                        <div class="w-full flex flex-col md:flex-row md:justify-between md:gap-x-4 mt-6 gap-y-6">
+                            <div class="md:grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="name" id="name" placeholder="First name">
+                            </div>
+                            <div class="md:grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="lastname" id="lastname" placeholder="Last name">
+                            </div>
+                        </div>
+
+                        <div class="w-full flex flex-col md:flex-row md:justify-between md:gap-x-4 mt-6 gap-y-6">
+                            <div class="grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="email" id="email" placeholder="Email Address ">
+                            </div>
+                            <div class="grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="phone" id="phone" placeholder="Phone">
+                            </div>
+                        </div>
+
+                        <div class="w-full flex flex-col md:flex-row md:justify-between md:gap-x-4 mt-6 gap-y-6">
+                            <div class="grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="number_of_guest" id="number_of_guest" placeholder="Number of guest ">
+                            </div>
+                            <div class="grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="age" id="age" placeholder="Estimated age">
+                            </div>
+                        </div>
+
+                        <div class="w-full flex flex-col mt-6 gap-y-6 md:h-28">
+                            <div>
+                                <textarea name="comments" id="comments" class="w-full h-full" placeholder="Some Comments?"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="w-full mt-6 flex justify-end">
+                            <button type="submit" class="border border-black rounded uppercase font-bold bg-white px-4 py-2">Send Request</button>
+                        </div>
+
+                    </div>
+                </form>
+            
+            </div>
+        
+        </div>
+    </div>
+
+    <!-- Content -->
+
+    <main>
+
+        <!-- Season -->
+        <section class="my-10 md:my-20 w-full">
+            <div class="flex justify-center items-center">
+                <h2 class="text-4xl font-bold uppercase text-[#71716a]">Contact</h2>
+            </div>
+        </section>
+
+        <!-- Main -->
+        <section>
+            <!-- Contact Form -->
+            <div class="w-full px-4 text-center mb-8 md:mb-16">
+
+                <form action="#" method="POST">
+                    <div class="max-w-4xl mx-auto">
+                    
+                        <div class="w-full flex flex-col md:flex-row md:justify-between md:gap-x-4 mt-6 gap-y-6">
+                            <div class="md:grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="name" id="name" placeholder="First name">
+                            </div>
+                            <div class="md:grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="lastname" id="lastname" placeholder="Last name">
+                            </div>
+                        </div>
+
+                        <div class="w-full flex flex-col md:flex-row md:justify-between md:gap-x-4 mt-6 gap-y-6">
+                            <div class="grow">
+                                <input class="w-full rounded text-neutral-500" type="text" name="email" id="email" placeholder="Email Address ">
+                            </div>
+                        </div>
+
+                        <div class="w-full flex flex-col mt-6 gap-y-6 md:h-28">
+                            <div>
+                                <textarea name="comments" id="comments" class="w-full h-full rounded" placeholder="Your message"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="w-full mt-6 flex justify-end">
+                            <button type="submit" class="border border-black rounded uppercase font-bold bg-white px-4 py-2">Send Request</button>
+                        </div>
+
+                    </div>
+                </form>
+            
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="p-4 bg-white shadow md:px-6 md:py-8 dark:bg-gray-900">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="#" class="flex items-center mb-4 sm:mb-0">
+                <img src="./assets/img/freetravelers-logo.jpg" class="mr-3 h-8" alt="Free Travelers Logo">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Free Travelers</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                </li>
+                <li>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="/" class="hover:underline">Free Travelers</a>. All Rights Reserved.
+        </span>
+    </footer>
+    
+
+
+    <span class="hidden burguer-menu-active"></span>
+    <script>
+
+        const OverlayMenu = document.querySelector('#OverlayMenu');
+        const OpenBurguerMenuBtn = document.querySelector('#OpenBurguerMenu');
+
+        const OverlayBookEvent = document.querySelector('#OverlayBookEvent');
+        
+        function CloseMenu(){
+            OverlayMenu.style.width = '0%';
+            OpenBurguerMenuBtn.classList.toggle('burguer-menu-active');
+        }
+        function OpenMenu(){
+            OverlayMenu.style.width = '100%';
+        }
+        
+        function CloseBookEvent(){
+            OverlayBookEvent.style.width = '0%';
+            // OpenBurguerMenuBtn.classList.toggle('burguer-menu-active');
+        }
+        function OpenBookEvent(){
+            OverlayBookEvent.style.width = '100%';
+        }
+
+        function animateMenu(element) {
+            element.classList.toggle('burguer-menu-active');
+        }
+
+        function handleLateralMenu(element){
+            animateMenu(element);
+            OpenMenu();
+        }
+
+
+    </script>
+    
+</body>
+</html>
