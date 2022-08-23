@@ -55,10 +55,10 @@
 
     <!-- Overlay Book Form -->
 
-    <div id="OverlayBookForm" class="overlay-book-form  h-full w-full fixed z-50 top-0 left-0 bg-[#e4e4e7] overflow-x-hidden duration-500">
+    <div id="OverlayBookEvent" class="overlay-book-form  h-full w-full fixed z-50 top-0 left-0 bg-[#e4e4e7] overflow-x-hidden duration-500">
         
 
-        <a href="javascript:void(0)" onclick="CloseMenu()" class="absolute top-1 right-3 p-2 text-6xl text-[#818181] block duration-300 focus:text-[#f1f1f1] hover:text-[#f1f1f1]"> &times; </a>
+        <a href="javascript:void(0)" onclick="CloseBookEvent()" class="absolute top-1 right-3 p-2 text-6xl text-[#818181] block duration-300 focus:text-[#f1f1f1] hover:text-[#f1f1f1]"> &times; </a>
 
         <div class="overlay-menu-content relative top-20 md:h-1/6 w-full text-center mt-8 md:mt-0 flex flex-col">
             
@@ -161,7 +161,7 @@
                     </div>
                     <div class="flex justify-center gap-4">
                         <button class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Buy Tickets</button>
-                        <button class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Book Tables</button>
+                        <button onclick="OpenBookEvent()" class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Book Tables</button>
                     </div>
                 </div>
                 <!-- Event card -->
@@ -188,7 +188,7 @@
                     </div>
                     <div class="flex justify-center gap-4">
                         <button class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Buy Tickets</button>
-                        <button class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Book Tables</button>
+                        <button onclick="OpenBookEvent()" class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Book Tables</button>
                     </div>
                 </div>
                 <!-- Event card -->
@@ -215,7 +215,7 @@
                     </div>
                     <div class="flex justify-center gap-4">
                         <button class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Buy Tickets</button>
-                        <button class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Book Tables</button>
+                        <button onclick="OpenBookEvent()" class="border border-black rounded py-1 px-4 text-xs font-bold uppercase">Book Tables</button>
                     </div>
                 </div>
 
@@ -258,6 +258,8 @@
 
         const OverlayMenu = document.querySelector('#OverlayMenu');
         const OpenBurguerMenuBtn = document.querySelector('#OpenBurguerMenu');
+
+        const OverlayBookEvent = document.querySelector('#OverlayBookEvent');
         
         function CloseMenu(){
             OverlayMenu.style.width = '0%';
@@ -265,6 +267,14 @@
         }
         function OpenMenu(){
             OverlayMenu.style.width = '100%';
+        }
+        
+        function CloseBookEvent(){
+            OverlayBookEvent.style.width = '0%';
+            // OpenBurguerMenuBtn.classList.toggle('burguer-menu-active');
+        }
+        function OpenBookEvent(){
+            OverlayBookEvent.style.width = '100%';
         }
 
         function animateMenu(element) {
